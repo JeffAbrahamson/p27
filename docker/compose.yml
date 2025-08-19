@@ -1,0 +1,10 @@
+services:
+  site-build:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: p27-build
+    command: >-
+      echo "Hello, Hugo."
+    volumes:
+      - ..:/p27
