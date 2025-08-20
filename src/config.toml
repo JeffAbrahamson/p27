@@ -5,6 +5,7 @@ uglyURLs = true                          # makes Hugo output page.html instead o
 disableKinds = ["taxonomy", "term", "RSS", "sitemap", "robotsTXT"]
 
 defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
 disableLanguages = []     # you could disable others if Hugo tries to add more
 
 [languages]
