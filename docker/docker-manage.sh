@@ -19,7 +19,7 @@ case "$action" in
           docker exec -ti "$container_id" /bin/bash
         else
           echo "Container is not running.  Starting the container in shell mode..."
-          docker compose run --build -it  --user $(id -u):$(id -g) --rm site-build /bin/bash
+          docker compose run --build -it  --user $(id -u):$(id -g)  --service-ports --rm site-build /bin/bash
         fi
         ;;
 

@@ -1,0 +1,6 @@
+---
+title: "English Home"
+---
+
+<h1>Welcome</h1>
+<p>This is the English version of the page.</p>

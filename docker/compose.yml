@@ -8,3 +8,5 @@ services:
       echo "Hello, Hugo."
     volumes:
       - ..:/p27
+    ports:
+      - "1313:1313"

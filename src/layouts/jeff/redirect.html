@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+    <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- point to your root CSS; Hugo will expand it against baseURL -->
+	<link rel="stylesheet" href="{{ "index.css" | absURL }}">
+	<title>{{ .Site.Title }} – Language check</title>
+
+	{{/* Look up the localized pages at build time */}}
+	{{ $en := site.GetPage "/jeff/index.en" }}
+	{{ $fr := site.GetPage "/jeff/index.fr" }}
+
+	<script>
+	 (function () {
+	     var lang = (navigator.language || navigator.userLanguage || "en").toLowerCase();
+	     var toFr = lang.startsWith("fr");
+	     var target = toFr ? "{{ with $fr }}{{ .RelPermalink }}{{ else }}/jeff/index.fr.html{{ end }}"
+                        : "{{ with $en }}{{ .RelPermalink }}{{ else }}/jeff/index.en.html{{ end }}";
+	     window.location.replace(target);
+	 })();
+	</script>
+    </head>
+    <body>
+	<p>This should redirect; if not click
+	    <a href="{{ with $en }}{{ .RelPermalink }}{{ else }}/jeff/index.en.html{{ end }}">here (EN)</a>.
+	</p>
+	<p>Cette page doit vous transférer
+	    <a href="{{ with $fr }}{{ .RelPermalink }}{{ else }}/jeff/index.fr.html{{ end }}">ici (FR)</a>.
+	</p>
+    </body>
+</html>

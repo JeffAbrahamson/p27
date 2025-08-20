@@ -1,0 +1,16 @@
+baseURL = "https://www.p27.eu/"
+title = "p27"
+languageCode = 'en-gb'
+uglyURLs = true                          # makes Hugo output page.html instead of /page/index.html
+disableKinds = ["taxonomy", "term", "RSS", "sitemap", "robotsTXT"]
+
+defaultContentLanguage = "en"
+disableLanguages = []     # you could disable others if Hugo tries to add more
+
+[languages]
+[languages.en]
+  languageName = "English"
+  weight = 1
+[languages.fr]
+  languageName = "Français"
+  weight = 2
